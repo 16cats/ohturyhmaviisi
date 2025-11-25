@@ -1,8 +1,8 @@
 import unittest
 import tempfile
 import json
-from reference_saver import ReferenceSaver
-from reference_maker import ReferenceMaker
+from src.reference_saver import ReferenceSaver
+from src.reference_maker import ReferenceMaker
 
 class TestReferenceSaver(unittest.TestCase):
 

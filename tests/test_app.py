@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from app import App
+from src.app import App
 
 class TestApp(unittest.TestCase):
     def setUp(self):

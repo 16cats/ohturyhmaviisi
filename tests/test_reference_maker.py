@@ -1,5 +1,5 @@
 import unittest
-from reference_maker import ReferenceMaker
+from src.reference_maker import ReferenceMaker
 
 class TestReferenceMaker(unittest.TestCase):
     def setUp(self):
