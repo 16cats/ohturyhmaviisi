@@ -1,12 +1,12 @@
 class ReferenceMaker:
-    def __init__(self, title, author, date):
-        self.title = title
-        self.author = author
-        self.date = date
+    def __init__(self, ref_type, key, other_fields):
+        self.ref_type = ref_type
+        self.key = key
+        self.other_fields = other_fields
 
     def tee_json(self):
         return {
-            "title": self.title,
-            "author": self.author,
-            "date": self.date
+            "type": self.ref_type,
+            "key": self.key,
+            "other fields": self.other_fields
         }
