@@ -5,8 +5,13 @@ class ReferenceSaver:
         self.file = file
 
     def tallenna(self, viite):
-        with open(self.file, encoding="utf-8") as file:
-            data = json.load(file)
+        try:
+            with open(self.file, encoding="utf-8") as file:
+                data = json.load(file)
+        except (FileNotFoundError, json.JSONDecodeError):
+            data = []
+
+            
 
         data.append(viite.tee_json())
 
