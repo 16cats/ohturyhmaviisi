@@ -1,4 +1,4 @@
-from reference_maker import ReferenceMaker
+from src.reference_maker import ReferenceMaker
 
 class App:
 

@@ -1,5 +1,5 @@
-from app import App
-from reference_saver import ReferenceSaver
+from src.app import App
+from src.reference_saver import ReferenceSaver
 
 def main():
     app = App()
