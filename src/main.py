@@ -1,9 +1,11 @@
 from src.app import App
 from src.reference_saver import ReferenceSaver
+from src.reference_lister import ReferenceLister
 
 def main():
     app = App()
     saver = ReferenceSaver()
+    lister = ReferenceLister()
 
     viite = None
 
@@ -11,6 +13,7 @@ def main():
         print("Komennot:")
         print("1 - Lisää viite")
         print("2 - Tallenna viite")
+        print("3 - Listaa viitteet")
         print("0 - Lopeta")
 
         komento = input("> ")
@@ -30,6 +33,9 @@ def main():
                 viite = None
             else:
                 print("Ei tallennettavaa viitettä!")
+
+        elif komento == "3":
+            lister.print_references()
 
         else:
             print("Huono komento")
