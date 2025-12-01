@@ -28,6 +28,8 @@ poetry self add -poetry-plugin-shell
 Kloonaa repo:
 git clone https://github.com/16cats/ohturyhmaviisi.git
 
-
-Aja poetry shell. 
+Aja poetry shell:
 poetry shell
+
+Ajetaan varsinainen ohjelma:
+python -m src.main
