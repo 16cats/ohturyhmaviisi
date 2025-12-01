@@ -8,6 +8,7 @@ class App:
         print("Lisää uusi viite")
         ref_type = input("Type (e.g. @book): ")
         key = input("Key: ")
+        # id = 
 
         other_fields = {}
 

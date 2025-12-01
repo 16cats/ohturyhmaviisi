@@ -48,6 +48,38 @@ class ReferenceLister:
             refs.append(line)
 
         return refs
+    
+    def editable_references(self):
+        """Palauttaa listan valmiita merkkijonoja tulostusta varten."""
+        refs = []
+
+        for ref in self._load_raw():
+            key = ref.get("key", "")
+            fields = ref.get("other fields", {}) or {}
+
+            author = fields.get("author", "")
+            date = fields.get("date", "")
+            title = fields.get("title", "")
+
+            # Rakenna merkkijono ihan käsin, EI joinilla
+            line = ""
+
+            if author:
+                line += author
+            if date:
+                line += f" ({date})"
+            if title:
+                line += f": {title}"
+            if key:
+                line += f" [{key}]"
+
+            line = line.strip()
+            if not line:
+                line = str(ref)
+
+            refs.append(line)
+
+        return refs
 
     def print_references(self):
         """Tulostaa viitteet kuten käyttöliittymässä."""
@@ -55,3 +87,8 @@ class ReferenceLister:
         for line in self.formatted_references():
             print(f"- {line}")
         print("Viitteiden listaus valmis.")
+
+    def print_editable_references(self):
+        print("Viitteet:")
+        for line in self.formatted_references():
+            print(f"- {line}")
