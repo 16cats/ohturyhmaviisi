@@ -1,6 +1,6 @@
-from src.app import App
-from src.reference_saver import ReferenceSaver
-from src.reference_lister import ReferenceLister
+from app import App
+from reference_saver import ReferenceSaver
+from reference_lister import ReferenceLister
 
 def main():
     app = App()
@@ -10,11 +10,13 @@ def main():
     viite = None
 
     while True:
-        print("Commands:")
-        print("1 - Add Reference")
-        print("2 - Save Reference")
-        print("3 - List References")
-        print("0 - Exit")
+        print("Komennot:")
+        print("1 - Lisää viite")
+        print("2 - Tallenna viite")
+        print("3 - Listaa kaikki viitteet")
+        print("4 - Listaa viitteet kirjoittajan mukaan")
+        print("5 - Listaa viitteet julkaisuvuoden mukaan")
+        print("0 - Lopeta")
 
         komento = input("> ")
 
@@ -37,8 +39,20 @@ def main():
         elif komento == "3":
             lister.print_references()
 
+        elif komento == "4":
+            nimi = input("Kirjoittajan nimi (tai osa nimeä):")
+            lister.print_by_author(nimi)
+
+        elif komento == "5":
+            vuosi = input("Julkaisuvuosi: ")
+            lister.print_by_year(vuosi)
+
         else:
             print("Bad command!")
+
+        
+
+            
 
 if __name__ == "__main__":
     main()
