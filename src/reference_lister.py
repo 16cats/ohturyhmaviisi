@@ -22,6 +22,7 @@ class ReferenceLister:
         refs = []
 
         for ref in self._load_raw():
+            id_ = ref.get("id", "")
             key = ref.get("key", "")
             fields = ref.get("other fields", {}) or {}
 
@@ -31,7 +32,8 @@ class ReferenceLister:
 
             # Rakenna merkkijono ihan käsin, EI joinilla
             line = ""
-
+            if id_ != "":
+                line += f" [ID:{id_}]"
             if author:
                 line += author
             if date:
@@ -51,7 +53,7 @@ class ReferenceLister:
 
     def print_references(self):
         """Tulostaa viitteet kuten käyttöliittymässä."""
-        print("Viitteet:")
+        print("References:")
         for line in self.formatted_references():
             print(f"- {line}")
-        print("Viitteiden listaus valmis.")
+        print("Reference listing done.")

@@ -5,7 +5,7 @@ class App:
     kentat = ["title", "author", "date"]
 
     def lisaa_viite(self):
-        print("Lisää uusi viite")
+        print("Add new reference:")
         ref_type = input("Type (e.g. @book): ")
         key = input("Key: ")
 

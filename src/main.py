@@ -10,18 +10,18 @@ def main():
     viite = None
 
     while True:
-        print("Komennot:")
-        print("1 - Lisää viite")
-        print("2 - Tallenna viite")
-        print("3 - Listaa viitteet")
-        print("0 - Lopeta")
+        print("Commands:")
+        print("1 - Add Reference")
+        print("2 - Save Reference")
+        print("3 - List References")
+        print("0 - Exit")
 
         komento = input("> ")
 
         if komento == "1":
             viite = app.lisaa_viite()
             if viite:
-                print("Viite lisätty!")
+                print("Reference added!")
 
         elif komento == "0":
             break
@@ -29,16 +29,16 @@ def main():
         elif komento == "2":
             if viite:
                 saver.tallenna(viite)
-                print("Viite tallennettu")
+                print("Reference saved!")
                 viite = None
             else:
-                print("Ei tallennettavaa viitettä!")
+                print("No references to save!")
 
         elif komento == "3":
             lister.print_references()
 
         else:
-            print("Huono komento")
+            print("Bad command!")
 
 if __name__ == "__main__":
     main()
