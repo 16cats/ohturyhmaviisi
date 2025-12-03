@@ -1,4 +1,5 @@
-from reference_maker import ReferenceMaker
+from .reference_maker import ReferenceMaker
+
 
 class App:
 
@@ -17,3 +18,4 @@ class App:
                 other_fields[kentta] = syote
 
         return ReferenceMaker(ref_type, key, other_fields)
+

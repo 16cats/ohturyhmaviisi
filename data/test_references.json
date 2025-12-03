@@ -1,0 +1,20 @@
+[
+  {
+    "type": "@book",
+    "key": "TestBook01",
+    "other fields": {
+      "author": "Test Author",
+      "title": "Testing Book Export",
+      "date": "2020"
+    }
+  },
+  {
+    "type": "@article",
+    "key": "TestArt02",
+    "other fields": {
+      "author": "Another Tester",
+      "title": "Unit Testing BibTeX Generation",
+      "date": "2023"
+    }
+  }
+]

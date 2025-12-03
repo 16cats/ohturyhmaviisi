@@ -1,11 +1,15 @@
-from app import App
-from reference_saver import ReferenceSaver
-from reference_lister import ReferenceLister
+from .app import App
+from .reference_saver import ReferenceSaver
+from .reference_lister import ReferenceLister
+from .bibtex_exporter import BibtexExporter
+
 
 def main():
     app = App()
     saver = ReferenceSaver()
     lister = ReferenceLister()
+    exporter = BibtexExporter()
+
 
     viite = None
 
@@ -17,6 +21,7 @@ def main():
         print("4 - Listaa viitteet kirjoittajan mukaan")
         print("5 - Listaa viitteet julkaisuvuoden mukaan")
         print("6 - Listaa viitteet julkaisutyypin mukaan ")
+        print("7 - Generoi BibTeX-tiedosto")
         print("0 - Lopeta")
 
         komento = input("> ")
@@ -51,7 +56,10 @@ def main():
         elif komento == "6":
             tyyppi = input("Julkaisutyppi (esim @book, @article jne.): ")
             lister.print_by_type(tyyppi)    
-
+            
+        elif komento == "7":
+            exporter.export()
+            
         else:
             print("Bad command!")
 
