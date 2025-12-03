@@ -14,7 +14,7 @@ class TestReferenceMaker(unittest.TestCase):
         self.maker = ReferenceMaker(ref_type, key, other_fields)
 
     def test_konstruktori(self):
-        self.assertEqual(self.maker.id, 2)
+        self.assertEqual(self.maker.id, 1)
         self.assertEqual(self.maker.ref_type, "@book")
         self.assertEqual(self.maker.key, "TestKey")
         self.assertEqual(self.maker.other_fields["title"], "TestiOtsikko")
