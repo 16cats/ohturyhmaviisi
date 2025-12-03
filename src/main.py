@@ -16,6 +16,7 @@ def main():
         print("3 - Listaa kaikki viitteet")
         print("4 - Listaa viitteet kirjoittajan mukaan")
         print("5 - Listaa viitteet julkaisuvuoden mukaan")
+        print("6 - Listaa viitteet julkaisutyypin mukaan ")
         print("0 - Lopeta")
 
         komento = input("> ")
@@ -46,6 +47,10 @@ def main():
         elif komento == "5":
             vuosi = input("Julkaisuvuosi: ")
             lister.print_by_year(vuosi)
+
+        elif komento == "6":
+            tyyppi = input("Julkaisutyppi (esim @book, @article jne.): ")
+            lister.print_by_type(tyyppi)    
 
         else:
             print("Bad command!")

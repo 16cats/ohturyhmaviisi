@@ -11,7 +11,7 @@ class ReferenceMaker:
 
     def tee_json(self):
         return {
-            "id": self.id,
+            #"id": self.id, Json ei halua id:tä mukaan. Kokeilen, mitä se tykää kun otan ton pois --Lauri
             "type": self.ref_type,
             "key": self.key,
             "other fields": self.other_fields

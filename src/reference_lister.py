@@ -41,47 +41,6 @@ class ReferenceLister:
         return line
 
     def formatted_references(self):
-<<<<<<< HEAD
-        """Palauttaa listan valmiita merkkijonoja tulostusta varten."""
-        refs = []
-
-        for ref in self._load_raw():
-            id_ = ref.get("id", "")
-            key = ref.get("key", "")
-            fields = ref.get("other fields", {}) or {}
-
-            author = fields.get("author", "")
-            date = fields.get("date", "")
-            title = fields.get("title", "")
-
-            # Rakenna merkkijono ihan käsin, EI joinilla
-            line = ""
-            if id_ != "":
-                line += f" [ID:{id_}]"
-            if author:
-                line += author
-            if date:
-                line += f" ({date})"
-            if title:
-                line += f": {title}"
-            if key:
-                line += f" [{key}]"
-
-            line = line.strip()
-            if not line:
-                line = str(ref)
-
-            refs.append(line)
-
-        return refs
-
-    def print_references(self):
-        """Tulostaa viitteet kuten käyttöliittymässä."""
-        print("References:")
-        for line in self.formatted_references():
-            print(f"- {line}")
-        print("Reference listing done.")
-=======
         return [self.format_one(ref) for ref in self._load_raw()]
 
     def print_references(self):
@@ -117,4 +76,17 @@ class ReferenceLister:
         for ref in self.references_by_year(year):
             print(f"- {self.format_one(ref)}")
         print("Listaus valmis.")
->>>>>>> 8456a79 (Lisätty suodatus kirjoittajan nimen ja julkaisuvuoden mukaan)
+
+    def references_by_type(self, type_query):
+        result = []
+        for ref in self._load_raw():
+            ref_type = ref.get("type", "")
+            if type_query.lower() in ref_type.lower():
+                result.append(ref)
+        return result
+
+    def print_by_type(self, type_query):
+        print(f"Viitteet – rajattu julkaisutyypin mukaan: {type_query}")
+        for ref in self.references_by_type(type_query):
+            print(f"- {self.format_one(ref)}")
+        print("Listaus valmis.")
