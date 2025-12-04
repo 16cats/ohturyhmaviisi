@@ -53,7 +53,7 @@ def main():
             lister.print_by_type(tyyppi)    
 
         else:
-            print("Bad command!")
+            print("Huono komento!")
 
         
 
