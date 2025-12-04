@@ -61,7 +61,7 @@ def main():
             exporter.export()
             
         else:
-            print("Bad command!")
+            print("Huono komento!")
 
         
 
