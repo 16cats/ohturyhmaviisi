@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on darwin)" generated="2025-12-04T12:31:15.672912" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot" source="/Users/laurimakynen/Desktop/Kurssit/Ohjelmistotuotanto/Ryhmätyö/ohturyhmaviisi/robot">
+<suite id="s1-s1" name="Viite" source="/Users/laurimakynen/Desktop/Kurssit/Ohjelmistotuotanto/Ryhmätyö/ohturyhmaviisi/robot/viite.robot">
+<test id="s1-s1-t1" name="Käyttäjä voi lisätä viitteen ja listata sen" line="5">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-12-04T12:31:15.690291" level="INFO">${input} = 1
+@book
+testkey1
+Testikirja
+Lauri
+2025
+2
+3
+0</msg>
+<var>${input}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>1</arg>
+<arg>@book</arg>
+<arg>testkey1</arg>
+<arg>Testikirja</arg>
+<arg>Lauri</arg>
+<arg>2025</arg>
+<arg>2</arg>
+<arg>3</arg>
+<arg>0</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-12-04T12:31:15.690178" elapsed="0.000130"/>
+</kw>
+<kw name="Run Process" owner="Process">
+<msg time="2025-12-04T12:31:15.690823" level="INFO">Starting process:
+python3 src/main.py</msg>
+<msg time="2025-12-04T12:31:15.692441" level="INFO">Waiting for process to complete.</msg>
+<msg time="2025-12-04T12:31:15.711557" level="INFO">Process completed.</msg>
+<msg time="2025-12-04T12:31:15.711745" level="INFO">${result} = &lt;result object with rc 2&gt;</msg>
+<var>${result}</var>
+<arg>python3</arg>
+<arg>src/main.py</arg>
+<arg>stdin=${input}</arg>
+<arg>stdout=PIPE</arg>
+<arg>stderr=PIPE</arg>
+<arg>cwd=/Users/laurimakynen/Desktop/Kurssit/Ohjelmistotuotanto/Ryhmätyö/ohturyhmaviisi/robot</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2025-12-04T12:31:15.690398" elapsed="0.021369"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2025-12-04T12:31:15.712814" level="FAIL">'/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/laurimakynen/Desktop/Kurssit/Ohjelmistotuotanto/Ryhmätyö/ohturyhmaviisi/robot/src/main.py': [Errno 2] No such file or directory' does not contain 'Lauri (2025): Testikirja [testkey1]'</msg>
+<arg>${result.stdout}</arg>
+<arg>Lauri (2025): Testikirja [testkey1]</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-12-04T12:31:15.712179" elapsed="0.000755">'/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/laurimakynen/Desktop/Kurssit/Ohjelmistotuotanto/Ryhmätyö/ohturyhmaviisi/robot/src/main.py': [Errno 2] No such file or directory' does not contain 'Lauri (2025): Testikirja [testkey1]'</status>
+</kw>
+<status status="FAIL" start="2025-12-04T12:31:15.689843" elapsed="0.023205">'/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/laurimakynen/Desktop/Kurssit/Ohjelmistotuotanto/Ryhmätyö/ohturyhmaviisi/robot/src/main.py': [Errno 2] No such file or directory' does not contain 'Lauri (2025): Testikirja [testkey1]'</status>
+</test>
+<status status="FAIL" start="2025-12-04T12:31:15.688055" elapsed="0.025226"/>
+</suite>
+<status status="FAIL" start="2025-12-04T12:31:15.673568" elapsed="0.039903"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Robot" id="s1" pass="0" fail="1" skip="0">Robot</stat>
+<stat name="Viite" id="s1-s1" pass="0" fail="1" skip="0">Robot.Viite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
