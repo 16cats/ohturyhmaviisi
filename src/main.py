@@ -1,6 +1,6 @@
-from app import App
-from reference_saver import ReferenceSaver
-from reference_lister import ReferenceLister
+from .app import App
+from .reference_saver import ReferenceSaver
+from .reference_lister import ReferenceLister
 
 def main():
     app = App()
