@@ -11,6 +11,8 @@ class TestReferenceMaker(unittest.TestCase):
             "date": "25.11.2025"
         }
 
+        
+
         self.maker = ReferenceMaker(ref_type, key, other_fields)
 
     def test_konstruktori(self):
