@@ -51,8 +51,11 @@ Aja ohjelma:
 ```
 ./run.sh
 ```
-
-###Varsinainen käyttö (Windows)
+Tämän jälkeen riittää, että jatkossa ajaa: 
+```
+./run.sh
+```
+### Varsinainen käyttö (Windows)
 
 Kloonaa repo:
 ```
