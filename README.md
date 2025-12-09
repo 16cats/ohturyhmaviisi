@@ -32,10 +32,36 @@ Kannattaa olla myös poetry shell asennettuna.
 poetry self add -poetry-plugin-shell
 ```
 
-### Varsinainen käyttö
+### Varsinainen käyttö (MacOs)
 Kloonaa repo:
 ```
 git clone https://github.com/16cats/ohturyhmaviisi.git
+```
+Mene kloonattuun kansioon:
+
+```
+cd ohturyhmäviisi
+```
+Tee ohjelmasta ajettava:
+```
+chmod +x run.sh
+```
+Aja ohjelma: 
+
+```
+./run.sh
+```
+
+###Varsinainen käyttö (Windows)
+
+Kloonaa repo:
+```
+git clone https://github.com/16cats/ohturyhmaviisi.git
+```
+Mene kloonattuun kansioon:
+
+```
+cd ohturyhmäviisi
 ```
 
 Ohjelmakansiossa aja poetry shell:
