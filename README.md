@@ -40,7 +40,7 @@ git clone https://github.com/16cats/ohturyhmaviisi.git
 Mene kloonattuun kansioon:
 
 ```
-cd ohturyhmäviisi
+cd ohturyhmaviisi
 ```
 Tee ohjelmasta ajettava:
 ```
@@ -61,7 +61,7 @@ git clone https://github.com/16cats/ohturyhmaviisi.git
 Mene kloonattuun kansioon:
 
 ```
-cd ohturyhmäviisi
+cd ohturyhmaviisi
 ```
 
 Ohjelmakansiossa aja poetry shell:
