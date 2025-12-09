@@ -24,6 +24,7 @@ class ReferenceLister:
         author = fields.get("author", "")
         date = fields.get("date", "")
         title = fields.get("title", "")
+        tags = ref.get("tags", [])
 
         line = ""
         if author:
@@ -35,10 +36,20 @@ class ReferenceLister:
         if key:
             line += f" [{key}]"
 
+        # LISÄYS: näytetään tagit lopussa
+        if tags:
+            if isinstance(tags, list):
+                tags_text = ", ".join(tags)
+            else:
+                tags_text = str(tags)
+            line += f" (tagit: {tags_text})"
+
         line = line.strip()
         if not line:
             line = str(ref)
         return line
+
+
 
     def formatted_references(self):
         return [self.format_one(ref) for ref in self._load_raw()]
