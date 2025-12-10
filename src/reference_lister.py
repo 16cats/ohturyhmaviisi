@@ -17,76 +17,41 @@ class ReferenceLister:
         except (FileNotFoundError, json.JSONDecodeError):
             return []
 
-    def format_one(self, ref):
-        key = ref.get("key", "")
-        fields = ref.get("other fields", {}) or {}
-
-        author = fields.get("author", "")
-        date = fields.get("date", "")
-        title = fields.get("title", "")
-
-        line = ""
-        if author:
-            line += author
-        if date:
-            line += f" ({date})"
-        if title:
-            line += f": {title}"
-        if key:
-            line += f" [{key}]"
-
-        line = line.strip()
-        if not line:
-            line = str(ref)
-        return line
-
     def formatted_references(self):
-        return [self.format_one(ref) for ref in self._load_raw()]
+        """Palauttaa listan valmiita merkkijonoja tulostusta varten."""
+        refs = []
+
+        for ref in self._load_raw():
+            key = ref.get("key", "")
+            fields = ref.get("other fields", {}) or {}
+
+            author = fields.get("author", "")
+            date = fields.get("date", "")
+            title = fields.get("title", "")
+
+            # Rakenna merkkijono ihan käsin, EI joinilla
+            line = ""
+
+            if author:
+                line += author
+            if date:
+                line += f" ({date})"
+            if title:
+                line += f": {title}"
+            if key:
+                line += f" [{key}]"
+
+            line = line.strip()
+            if not line:
+                line = str(ref)
+
+            refs.append(line)
+
+        return refs
 
     def print_references(self):
+        """Tulostaa viitteet kuten käyttöliittymässä."""
         print("Viitteet:")
         for line in self.formatted_references():
             print(f"- {line}")
         print("Viitteiden listaus valmis.")
-
-    def references_by_author(self, author_query):
-        result = []
-        for ref in self._load_raw():
-            author = ref.get("other fields", {}).get("author", "") or ""
-            if author_query.lower() in author.lower():
-                result.append(ref)
-        return result
-
-    def references_by_year(self, year):
-        result = []
-        for ref in self._load_raw():
-            date = ref.get("other fields", {}).get("date", "") or ""
-            if date == year:
-                result.append(ref)
-        return result
-
-    def print_by_author(self, author):
-        print(f"Viitteet – rajattu kirjoittajan mukaan: {author}")
-        for ref in self.references_by_author(author):
-            print(f"- {self.format_one(ref)}")
-        print("Listaus valmis.")
-
-    def print_by_year(self, year):
-        print(f"Viitteet – rajattu vuodelle: {year}")
-        for ref in self.references_by_year(year):
-            print(f"- {self.format_one(ref)}")
-        print("Listaus valmis.")
-
-    def references_by_type(self, type_query):
-        result = []
-        for ref in self._load_raw():
-            ref_type = ref.get("type", "")
-            if type_query.lower() in ref_type.lower():
-                result.append(ref)
-        return result
-
-    def print_by_type(self, type_query):
-        print(f"Viitteet – rajattu julkaisutyypin mukaan: {type_query}")
-        for ref in self.references_by_type(type_query):
-            print(f"- {self.format_one(ref)}")
-        print("Listaus valmis.")
