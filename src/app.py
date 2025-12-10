@@ -5,7 +5,7 @@ class App:
     kentat = ["title", "author", "date"]
 
     def lisaa_viite(self):
-        print("Lisää uusi viite")
+        print("Add new reference:")
         ref_type = input("Type (e.g. @book): ")
         key = input("Key: ")
 
@@ -17,3 +17,4 @@ class App:
                 other_fields[kentta] = syote
 
         return ReferenceMaker(ref_type, key, other_fields)
+
