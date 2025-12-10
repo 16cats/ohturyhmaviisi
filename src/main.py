@@ -71,17 +71,20 @@ def main():
 
         elif komento == "8":
             key = input("Anna poistettavan viitteen avain: ")
-            if not key:
-                print("Et antanut mitään avainta.")
+
+            confirm = input(f"Haluatko varmasti poistaa viitteen [{key}]? (k/e): ").lower()
+            if confirm != "k":
+                print("Poisto peruttu.")
+                continue
+
+            if deleter.delete_by_key(key):
+                print(f"Viite [{key}] poistettu.")
             else:
-                poistettu = deleter.delete_by_key(key)
-                if poistettu:
-                    print(f"Viite [{key}] poistettu.")
-                else:
-                    print(f"Viitettä [{key}] ei löytynyt.")
+                print("Viitettä ei löytynyt.")
+
 
         elif komento == "9":
-            key = input("Anna viitteen key, johon lisätään tägi: ")
+            key = input("Anna viitteen avain, johon lisätään tägi: ")
             if not key:
                 print("Et antanut mitään avainta.")
             else:
