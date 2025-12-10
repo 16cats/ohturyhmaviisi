@@ -1,8 +1,11 @@
 from .app import App
 from .reference_saver import ReferenceSaver
 from .reference_lister import ReferenceLister
+from .reference_maker import ReferenceMaker
 
 def main():
+    ReferenceMaker.load_next_id()
+
     app = App()
     saver = ReferenceSaver()
     lister = ReferenceLister()
@@ -55,9 +58,6 @@ def main():
         else:
             print("Huono komento!")
 
-        
-
-            
 
 if __name__ == "__main__":
     main()
