@@ -1,10 +1,9 @@
-from .app import App
-from .reference_saver import ReferenceSaver
-from .reference_lister import ReferenceLister
+from src.app import App
+from src.reference_saver import ReferenceSaver
+from src.reference_lister import ReferenceLister
 from .bibtex_exporter import BibtexExporter
 from .reference_deleter import ReferenceDeleter
 from .reference_tagger import ReferenceTagger
-
 
 
 def main():
