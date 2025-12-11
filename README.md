@@ -67,14 +67,19 @@ Mene kloonattuun kansioon:
 cd ohturyhmaviisi
 ```
 
-Ohjelmakansiossa aja poetry shell:
+Suorita komento
 ```
-poetry shell
+Set-ExecutionPolicy -Scope Process RemoteSigned
 ```
 
 Ajetaan varsinainen ohjelma:
 ```
-python -m src.main
+./run.ps1
+```
+
+Jatkossa riittää, että ajaa tiedoston vain komennolla:
+```
+./run.ps1
 ```
 
 ## DoD
