@@ -1,9 +1,11 @@
-from src.app import App
-from src.reference_saver import ReferenceSaver
-from src.reference_lister import ReferenceLister
+from .app import App
+from .reference_saver import ReferenceSaver
+from .reference_lister import ReferenceLister
 from .bibtex_exporter import BibtexExporter
 from .reference_deleter import ReferenceDeleter
 from .reference_tagger import ReferenceTagger
+
+
 
 def main():
     ReferenceMaker.load_next_id()
@@ -64,8 +66,8 @@ def main():
 
         elif komento == "6":
             tyyppi = input("Julkaisutyppi (esim @book, @article jne.): ")
-            lister.print_by_type(tyyppi)    
-            
+            lister.print_by_type(tyyppi)
+
         elif komento == "7":
             exporter.export()
 
@@ -93,14 +95,15 @@ def main():
                     if ok:
                         print(f"Tägi lisätty viitteeseen [{key}].")
                     else:
-                        print(f"Viitettä [{key}] ei löytynyt.") 
+                        print(f"Viitettä [{key}] ei löytynyt.")
 
         elif komento == "10":
             key = input("Anna viitteen avain, jonka tägejä muokataan: ")
             if not key:
                 print("Et antanut mitään avainta.")
             else:
-                uusi = input("Anna uudet tägit pilkuilla eroteltuna (esim. 'tärkeä, palaa tähän'): ")
+                uusi = input("Anna uudet tägit pilkuilla eroteltuna "
+                "(esim. 'tärkeä, palaa tähän'): ")
                 ok = tagger.set_tags(key, uusi)
                 if ok:
                     print(f"Viitteen [{key}] tägit päivitetty.")
@@ -117,7 +120,7 @@ def main():
                     print(f"Viitteen [{key}] tägit poistettu.")
                 else:
                     print(f"Viitettä [{key}] ei löytynyt.")
-            
+
         else:
             print("Huono komento!")
 
