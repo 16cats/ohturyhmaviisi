@@ -6,12 +6,13 @@ class ReferenceMaker:
         ReferenceMaker.next_id += 1
         self.ref_type = ref_type
         self.key = key #user-defined unique key
-        
+
         self.other_fields = other_fields
 
     def tee_json(self):
         return {
-            #"id": self.id, Json ei halua id:tä mukaan. Kokeilen, mitä se tykää kun otan ton pois --Lauri
+            #"id": self.id, Json ei halua id:tä mukaan.
+            # Kokeilen, mitä se tykää kun otan ton pois --Lauri
             "type": self.ref_type,
             "key": self.key,
             "other fields": self.other_fields

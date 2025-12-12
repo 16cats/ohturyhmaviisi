@@ -11,8 +11,6 @@ class ReferenceSaver:
         except (FileNotFoundError, json.JSONDecodeError):
             data = []
 
-            
-
         data.append(viite.tee_json())
 
         with open(self.file, "w", encoding="utf-8") as file:

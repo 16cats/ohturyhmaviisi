@@ -64,8 +64,8 @@ def main():
 
         elif komento == "6":
             tyyppi = input("Julkaisutyppi (esim @book, @article jne.): ")
-            lister.print_by_type(tyyppi)    
-            
+            lister.print_by_type(tyyppi)
+
         elif komento == "7":
             exporter.export()
 
@@ -120,10 +120,6 @@ def main():
             
         else:
             print("Bad command!")
-
-        
-
-            
 
 if __name__ == "__main__":
     main()

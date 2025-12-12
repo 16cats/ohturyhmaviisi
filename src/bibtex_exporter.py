@@ -72,4 +72,3 @@ class BibtexExporter:
         # Tulostetaan varmuuden vuoksi myös absoluuttinen polku
         print(f"BibTeX-tiedosto generoitu: {output_path}")
         print(f"(Täydellinen polku: {output_path.resolve()})")
-
