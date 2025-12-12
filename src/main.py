@@ -8,6 +8,8 @@ from .reference_tagger import ReferenceTagger
 
 
 def main():
+    ReferenceMaker.load_next_id()
+
     app = App()
     saver = ReferenceSaver()
     lister = ReferenceLister()
@@ -120,7 +122,8 @@ def main():
                     print(f"Viitettä [{key}] ei löytynyt.")
 
         else:
-            print("Bad command!")
+            print("Huono komento!")
+
 
 if __name__ == "__main__":
     main()
