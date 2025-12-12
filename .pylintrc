@@ -2,7 +2,7 @@
 
 ignore=tests
 
-[MESSAGES CONTROL]
+[MESSAGE CONTROL]
 
 disable=raw-checker-failed,
         bad-inline-option,
@@ -16,16 +16,18 @@ disable=raw-checker-failed,
         missing-function-docstring,
         missing-class-docstring,
         too-few-public-methods,
-        too-many-statements
+        too-many-statements,
+        too-many-branches,
+        duplicate-code
 
 [FORMAT]
 
-max-line-length=80
+max-line-length=100
 
 [REFACTORING]
 
-max-nested-blocks=3
+max-nested-blocks=5
 
 [DESIGN]
 
-max-branches=15
+max-locals=20

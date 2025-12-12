@@ -93,14 +93,15 @@ def main():
                     if ok:
                         print(f"Tägi lisätty viitteeseen [{key}].")
                     else:
-                        print(f"Viitettä [{key}] ei löytynyt.") 
+                        print(f"Viitettä [{key}] ei löytynyt.")
 
         elif komento == "10":
             key = input("Anna viitteen avain, jonka tägejä muokataan: ")
             if not key:
                 print("Et antanut mitään avainta.")
             else:
-                uusi = input("Anna uudet tägit pilkuilla eroteltuna (esim. 'tärkeä, palaa tähän'): ")
+                uusi = input("Anna uudet tägit pilkuilla eroteltuna "
+                "(esim. 'tärkeä, palaa tähän'): ")
                 ok = tagger.set_tags(key, uusi)
                 if ok:
                     print(f"Viitteen [{key}] tägit päivitetty.")
@@ -117,7 +118,7 @@ def main():
                     print(f"Viitteen [{key}] tägit poistettu.")
                 else:
                     print(f"Viitettä [{key}] ei löytynyt.")
-            
+
         else:
             print("Bad command!")
 
