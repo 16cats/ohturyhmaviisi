@@ -4,10 +4,13 @@ from .reference_lister import ReferenceLister
 from .bibtex_exporter import BibtexExporter
 from .reference_deleter import ReferenceDeleter
 from .reference_tagger import ReferenceTagger
+from .reference_maker import ReferenceMaker
 
 
 
 def main():
+    ReferenceMaker.load_next_id()
+
     app = App()
     saver = ReferenceSaver()
     lister = ReferenceLister()
@@ -120,7 +123,8 @@ def main():
                     print(f"Viitettä [{key}] ei löytynyt.")
 
         else:
-            print("Bad command!")
+            print("Huono komento!")
+
 
 if __name__ == "__main__":
     main()
