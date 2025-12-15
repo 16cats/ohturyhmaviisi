@@ -4,6 +4,7 @@ from .reference_lister import ReferenceLister
 from .bibtex_exporter import BibtexExporter
 from .reference_deleter import ReferenceDeleter
 from .reference_tagger import ReferenceTagger
+from .reference_maker import ReferenceMaker
 
 
 
