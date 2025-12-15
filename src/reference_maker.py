@@ -12,7 +12,7 @@ class ReferenceMaker:
         # load last id from json
         if os.path.exists(cls.CONFIG_FILE):
             try:
-                with open(cls.CONFIG_FILE, 'r') as f:
+                with open(cls.CONFIG_FILE, 'r', encoding="utf-8") as f:
                     data = json.load(f)
                     if isinstance(data, list) and len(data) > 0:
                         # find the highest possible id and add 1
@@ -38,5 +38,3 @@ class ReferenceMaker:
             "key": self.key,
             "other fields": self.other_fields
         }
-    
-    
