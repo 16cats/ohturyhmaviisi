@@ -1,3 +1,123 @@
 [
-  {}
+  {},
+  {
+    "id": "6",
+    "type": "aikakausilehti",
+    "key": "KetterÃ¤24",
+    "other fields": {
+      "title": "Ketterien menetelmien vahvuudet",
+      "author": "Jarkko KetterÃ¤",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "9",
+    "type": "artikkeli",
+    "key": "Jarkko24",
+    "other fields": {
+      "title": "Koodauksen perusteet",
+      "author": "Pertti Jarkko",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "10",
+    "type": "Kirja",
+    "key": "Luokka21",
+    "other fields": {
+      "title": "Aliohjelmat",
+      "author": "Minna Luokka",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "11",
+    "type": "kirja",
+    "key": "Testi25",
+    "other fields": {
+      "title": "Testaamisen perusteet",
+      "author": "Olivia Testi",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "12",
+    "type": "artikkeli",
+    "key": "Puu22",
+    "other fields": {
+      "title": "KetterÃ¤t menetelmÃ¤t vs vesiputousmalli",
+      "author": "Mika Puu",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "13",
+    "type": "aikakausilehti",
+    "key": "Virtanen20",
+    "other fields": {
+      "title": "Latex",
+      "author": "Ilkka Virtanen",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "14",
+    "type": "kirja",
+    "key": "Martin09",
+    "other fields": {
+      "title": "SAFE",
+      "author": "Jim Martin",
+      "date": "2009"
+    }
+  },
+  {
+    "id": "15",
+    "type": "artikkeli",
+    "key": "Salo11",
+    "other fields": {
+      "title": "OpinnÃ¤ytetyÃ¶n aloitus",
+      "author": "Maikki Salo",
+      "date": "2011"
+    }
+  },
+  {
+    "id": "16",
+    "type": "aikakausilehti",
+    "key": "MÃ¤kelÃ¤23",
+    "other fields": {
+      "title": "Tietokannat",
+      "author": "Henrik MÃ¤kelÃ¤",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "17",
+    "type": "kirja",
+    "key": "MÃ¤kinen09",
+    "other fields": {
+      "title": "Python-ohjelmoinnin perusteet",
+      "author": "Salla MÃ¤kinen",
+      "date": "2009"
+    }
+  },
+  {
+    "id": "18",
+    "type": "kirja",
+    "key": "Karlsson25",
+    "other fields": {
+      "title": "Ruotsin sanastoa",
+      "author": "Mikael Karlsson",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "19",
+    "type": "artikkeli",
+    "key": "Pohatta00",
+    "other fields": {
+      "title": "HyvÃ¤ opinnÃ¤yteyÃ¶\u001b[D\u001b[DtyÃ¶",
+      "author": "Oiva Pohatta",
+      "date": "2000"
+    }
+  }
 ]
