@@ -59,3 +59,10 @@ chmod +x run.sh
     * järkevä nimeäminen
     * järkevä/selkeä ja perusteltu arkkitehtuuri
     * yhtenäinen koodityyli (noudattaa pylintin avulla määriteltyjä sääntöjä).
+
+## Miten sovellusta voisi käyttää useamman käyttäjän kesken samassa projektissa? 
+Yksi vaihtoehto olisi luoda konsolisovellukselle graafinen käyttöliittymä. Graafisen käyttöliittymän luonti vaatisi paljon tekemistä. Graafisen sovelluksen voisi julkaista web sovelluksena ja silloin sovellukseen tarvittaisiin myös käyttäjätiedot ja sql-tietokantaan mahdollisuudet. Tästä tulisi siis aika paljon tekemistä, mikäli yhteiskehitystä haluaisi siis tehdä verkon välityksellä. 
+
+Yliopiston palvelimella pyörivä sovellus voisi toimia konsolisovelluksena, mutta silloin kaikki olisi kaikille käyttäjille julkista. Eli sovellus periaatteessa toimisi, mutta ei tarkoitetulla tavalla.
+
+Dockerin kautta toimiva yhteiskäyttö olisi myös mahdollista, mutta silloin pitäisi saada myös http endopointit toimimaan käyttäjien kesken. Eli ehkä kaikista toimivin ratkaisu pitkällä aikavälillä olisi luoda sovelluksesta verkkosovellus, jolloin sovellus olisi helpoimmin skaalattavissa kaikille käyttäjille samaan aikaan.
