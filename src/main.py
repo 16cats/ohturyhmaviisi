@@ -5,7 +5,7 @@ from .bibtex_exporter import BibtexExporter
 from .reference_deleter import ReferenceDeleter
 from .reference_tagger import ReferenceTagger
 from .reference_maker import ReferenceMaker
-
+from .reference_editor import ReferenceEditor
 
 
 def main():
@@ -17,6 +17,7 @@ def main():
     exporter = BibtexExporter()
     deleter = ReferenceDeleter()
     tagger = ReferenceTagger()
+    editor = ReferenceEditor()
 
 
     viite = None
@@ -25,15 +26,16 @@ def main():
         print("Komennot:")
         print("1 - Lisää viite")
         print("2 - Tallenna viite")
-        print("3 - Listaa kaikki viitteet")
-        print("4 - Listaa viitteet kirjoittajan mukaan")
-        print("5 - Listaa viitteet julkaisuvuoden mukaan")
-        print("6 - Listaa viitteet julkaisutyypin mukaan ")
-        print("7 - Generoi BibTeX-tiedosto")
-        print("8 - Poista viite avaimen perusteella")
-        print("9 - Lisää tägi viitteelle")
-        print("10 - Muokkaa viitteen tägejä")
-        print("11 - Poista viitteen tägit")
+        print("3 - Muokkaa viitettä")
+        print("4 - Listaa kaikki viitteet")
+        print("5 - Listaa viitteet kirjoittajan mukaan")
+        print("6 - Listaa viitteet julkaisuvuoden mukaan")
+        print("7 - Listaa viitteet julkaisutyypin mukaan ")
+        print("8 - Generoi BibTeX-tiedosto")
+        print("9 - Poista viite avaimen perusteella")
+        print("10 - Lisää tägi viitteelle")
+        print("11 - Muokkaa viitteen tägejä")
+        print("12 - Poista viitteen tägit")
         print("0 - Lopeta")
 
         komento = input("> ")
@@ -55,24 +57,31 @@ def main():
                 print("No references to save!")
 
         elif komento == "3":
-            lister.print_references()
+            editor.list_id_and_name()
+            edit_id = input()
+            bool_return = editor.edit_reference(edit_id)
+            if bool_return is True:
+                print("Viite muokattu ja tallennettu!")
 
         elif komento == "4":
+            lister.print_references()
+
+        elif komento == "5":
             nimi = input("Kirjoittajan nimi (tai osa nimeä):")
             lister.print_by_author(nimi)
 
-        elif komento == "5":
+        elif komento == "6":
             vuosi = input("Julkaisuvuosi: ")
             lister.print_by_year(vuosi)
 
-        elif komento == "6":
+        elif komento == "7":
             tyyppi = input("Julkaisutyppi (esim @book, @article jne.): ")
             lister.print_by_type(tyyppi)
 
-        elif komento == "7":
+        elif komento == "8":
             exporter.export()
 
-        elif komento == "8":
+        elif komento == "9":
             key = input("Anna poistettavan viitteen avain: ")
 
             confirm = input(f"Haluatko varmasti poistaa viitteen [{key}]? (k/e): ").lower()
@@ -86,7 +95,7 @@ def main():
                 print("Viitettä ei löytynyt.")
 
 
-        elif komento == "9":
+        elif komento == "10":
             key = input("Anna viitteen avain, johon lisätään tägi: ")
             if not key:
                 print("Et antanut mitään avainta.")
@@ -101,7 +110,7 @@ def main():
                     else:
                         print(f"Viitettä [{key}] ei löytynyt.")
 
-        elif komento == "10":
+        elif komento == "11":
             key = input("Anna viitteen avain, jonka tägejä muokataan: ")
             if not key:
                 print("Et antanut mitään avainta.")
@@ -114,7 +123,7 @@ def main():
                 else:
                     print(f"Viitettä [{key}] ei löytynyt.")
 
-        elif komento == "11":
+        elif komento == "12":
             key = input("Anna viitteen avain, jolta poistetaan tägit: ")
             if not key:
                 print("Et antanut mitään avainta.")
