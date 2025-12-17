@@ -37,7 +37,7 @@ cd ohturyhmaviisi
 ```
 
 Windows:
-Suorita komento & ajetaan varsinainen ohjelma
+Suorita komento ja ajetaan varsinainen ohjelma
 ```
 Set-ExecutionPolicy -Scope Process RemoteSigned
 ./run.ps1
@@ -45,7 +45,7 @@ Set-ExecutionPolicy -Scope Process RemoteSigned
 
 
 macOS:
-Tee ohjelmasta ajettava & aja ohjelma
+Tee ohjelmasta ajettava ja aja ohjelma
 ```
 chmod +x run.sh
 ./run.sh
@@ -54,13 +54,13 @@ chmod +x run.sh
 ## 🌳DoD
 
 - Toteutetun koodin testikattavuuden tulee olla kohtuullinen
-- Asiakas pääsee näkemään kook ajan koodin a testien tilanteen CI-palvelusta
+- Asiakas pääsee näkemään jatkuvasti testien tilannetta CI-palvelusta
 - Koodin ylläpidettävyyden tulee olla mahdollisimman hyvä:
     * järkevä nimeäminen
     * järkevä/selkeä ja perusteltu arkkitehtuuri
     * yhtenäinen koodityyli (noudattaa pylintin avulla määriteltyjä sääntöjä).
 
-## Miten sovellusta voisi käyttää useamman käyttäjän kesken samassa projektissa? 
+## 🪴Miten sovellusta voisi käyttää useamman käyttäjän kesken samassa projektissa? 
 Yksi vaihtoehto olisi luoda konsolisovellukselle graafinen käyttöliittymä. Graafisen käyttöliittymän luonti vaatisi paljon tekemistä. Graafisen sovelluksen voisi julkaista web sovelluksena ja silloin sovellukseen tarvittaisiin myös käyttäjätiedot ja sql-tietokantaan mahdollisuudet. Tästä tulisi siis aika paljon tekemistä, mikäli yhteiskehitystä haluaisi siis tehdä verkon välityksellä. 
 
 Yliopiston palvelimella pyörivä sovellus voisi toimia konsolisovelluksena, mutta silloin kaikki olisi kaikille käyttäjille julkista. Eli sovellus periaatteessa toimisi, mutta ei tarkoitetulla tavalla.
