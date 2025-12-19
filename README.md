@@ -6,6 +6,8 @@ Tarkoituksena on tehdä ohjelmisto, jonka avulla voi lisätä latex-tiedostoon l
 
 Työn backlogin löydät [täältä](https://jyu.sharepoint.com/:x:/s/OHTUR5/IQDqeg-eeTNzRYoQbwnLpe8MAfN5-x99SziqperxXiQJsB8?e=NHGCvY).
 
+Loppuraportin löydät [täältä](https://jyu-my.sharepoint.com/:w:/g/personal/viekataj_jyu_fi/IQCbvMdPUR8ST4CoDJpLC0hWAeWqF2-V-crnQj9JFp7zngY?e=xFrW4H).
+
 
 ## 🌱Esivaatimukset
 
